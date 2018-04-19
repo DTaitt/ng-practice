@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { MasterSwordComponent } from './master-sword/master-sword.component';
 import { UserService } from './services/user/user.service';
+import { EquipmentModule } from './equipment/equipment.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MasterSwordComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    EquipmentModule
   ],
   providers: [
     UserService
