@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-master-sword',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterSwordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private UserService:UserService) { }
 
-  proclomation:string = 'This is my sanctification proclomation for the people all IN the nation'
+  proclamation:string;
+  username:string;
 
   ngOnInit() {
+    this.username = this.UserService.getUsername();
+    this.proclamation = `My name is ${this.username}. First of his name. Son of ...`;
   }
 
 }
